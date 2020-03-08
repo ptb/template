@@ -34,7 +34,7 @@ export const icon = ({
           })
       }")`,
       "backgroundRepeat": "no-repeat",
-      "content": "' '",
+      "content": "''",
       "display": "inline-block",
       "minHeight": 16,
       "minWidth": 16,
