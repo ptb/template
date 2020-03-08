@@ -103,17 +103,19 @@
     ]
   },
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
+    "build": "npx npm-run-all --parallel build:*",
     "build:gatsby": "gatsby build",
     "build:next": "ANALYZE=true next build",
-    "clean": "npm-run-all --serial clean:gatsby clean:node",
+    "build:storybook": "build-storybook -c ./.storybook -o ./doc",
+    "clean": "npx npm-run-all --serial clean:next clean:gatsby clean:node",
     "clean:gatsby": "gatsby clean",
+    "clean:next": "rm -rf tmp",
     "clean:node": "rm -rf node_modules yarn.lock",
     "lint": "eslint --ext js,jsx --fix '*.js{,x}' 'src/**/*.js{,x}'",
-    "serve": "npm-run-all --parallel serve:*",
+    "serve": "npx npm-run-all --parallel serve:*",
     "serve:gatsby": "gatsby serve",
     "serve:next": "NODE_ENV=production node --experimental-modules server.js",
-    "start": "npm-run-all --parallel start:*",
+    "start": "npx npm-run-all --parallel start:*",
     "start:gatsby": "gatsby develop",
     "start:next": "node --experimental-modules server.js",
     "start:storybook": "start-storybook -c ./.storybook -p 9000 -s ./public"

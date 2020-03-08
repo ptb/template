@@ -4,9 +4,9 @@ import { connect } from "react-redux"
 import { actions } from "../../shared/index.js"
 import { getApiData } from "../../utilities/index.js"
 
-import { Header as Element } from "./header.view.jsx"
+import { Example as Element } from "./example.view.jsx"
 
-const HeaderSTP = () => {
+const ExampleSTP = () => {
   const { data } = getApiData ("/api/products")
 
   return (state) =>
@@ -16,11 +16,11 @@ const HeaderSTP = () => {
     })
 }
 
-const HeaderDTP = {
+const ExampleDTP = {
   "fetchSearch": actions.fetchSearch
 }
 
-export const Header = connect (
-  HeaderSTP,
-  HeaderDTP
+export const example = connect (
+  ExampleSTP,
+  ExampleDTP
 ) (Element)

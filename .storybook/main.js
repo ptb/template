@@ -4,6 +4,6 @@ module.exports = {
     "@storybook/addon-links"
   ],
   "stories": [
-    "../src/**/*.ui.jsx"
+    "../src/**/*.stories.jsx"
   ]
 }
