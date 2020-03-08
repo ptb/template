@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
+    "Huuums.vscode-fast-folder-structure",
     "prisma.vscode-graphql"
   ]
 }

@@ -1,1 +1,141 @@
-{}
+{
+  "fastFolderStructure.fileTemplates": {
+    "ComponentTemplate": [
+      "export { <FFSName | pascalcase> } from \"./<FFSName>.view.jsx\"",
+      ""
+    ],
+    "ContainerTemplate": [
+      "export { <FFSName | pascalcase> } from \"./<FFSName>.props.jsx\"",
+      ""
+    ],
+    "PropsTemplate": [
+      "import React from \"react\"",
+      "",
+      "import { <FFSName | pascalcase> as Element } from \"./<FFSName>.view.jsx\"",
+      "",
+      "export const <FFSName | pascalcase> = ({",
+      "  ...props",
+      "}) => {",
+      "  return (",
+      "    <Element",
+      "      {...props}",
+      "    />",
+      "  )",
+      "}",
+      "",
+      "<FFSName | pascalcase>.displayName = \"<FFSName | pascalcase>Container\"",
+      "",
+      "<FFSName | pascalcase>.propTypes = {}",
+      ""
+    ],
+    "StorybookTemplate": [
+      "/* eslint-disable-next-line import/no-extraneous-dependencies */",
+      "import { storiesOf } from \"@storybook/react\"",
+      "import React from \"react\"",
+      "",
+      "import { <FFSName | pascalcase> } from \"./<FFSName>.view.jsx\"",
+      "",
+      "storiesOf (\"components|<FFSName | pascalcase>\", module)",
+      "  .add (\"<FFSName | pascalcase>\", () =>",
+      "    (",
+      "      <<FFSName | pascalcase> />",
+      "    ))",
+      ""
+    ],
+    "StylesTemplate": [
+      "import { merge } from \"@amory/style\"",
+      "",
+      "import { fonts } from \"../../styles/index.js\"",
+      "",
+      "export const styles = {",
+      "  \"element\": merge (",
+      "    fonts.common,",
+      "    {",
+      "    }",
+      "  )",
+      "}",
+      ""
+    ],
+    "ViewTemplate": [
+      "import { css } from \"@amory/style\"",
+      "import * as PropTypes from \"prop-types\"",
+      "import React from \"react\"",
+      "",
+      "import { styles } from \"./<FFSName>.styles.js\"",
+      "",
+      "export const <FFSName | pascalcase> = ({",
+      "  \"as\": Element = \"div\",",
+      "  children,",
+      "  className,",
+      "  style = {},",
+      "  ...props",
+      "}) =>",
+      "  (",
+      "    <Element",
+      "      className={css ([styles.element, style], className)}",
+      "      {...props}",
+      "    >",
+      "      {children}",
+      "    </Element>",
+      "  )",
+      "",
+      "<FFSName | pascalcase>.displayName = \"<FFSName | pascalcase>\"",
+      "",
+      "<FFSName | pascalcase>.propTypes = {",
+      "  \"as\": PropTypes.elementType,",
+      "  \"children\": PropTypes.node,",
+      "  \"className\": PropTypes.string,",
+      "  \"style\": PropTypes.object",
+      "}",
+      ""
+    ]
+  },
+  "fastFolderStructure.structures": [
+    {
+      "name": "New Component",
+      "structure": [
+        {
+          "fileName": "index.js",
+          "template": "ComponentTemplate"
+        },
+        {
+          "fileName": "<FFSName>.stories.jsx",
+          "template": "StorybookTemplate"
+        },
+        {
+          "fileName": "<FFSName>.styles.js",
+          "template": "StylesTemplate"
+        },
+        {
+          "fileName": "<FFSName>.view.jsx",
+          "template": "ViewTemplate"
+        }
+      ]
+    },
+    {
+      "name": "New Container",
+      "structure": [
+        {
+          "fileName": "index.js",
+          "template": "ContainerTemplate"
+        },
+        {
+          "fileName": "<FFSName>.props.jsx",
+          "template": "PropsTemplate"
+        },
+        {
+          "fileName": "<FFSName>.stories.jsx",
+          "template": "StorybookTemplate"
+        },
+        {
+          "fileName": "<FFSName>.styles.js",
+          "template": "StylesTemplate"
+        },
+        {
+          "fileName": "<FFSName>.view.jsx",
+          "template": "ViewTemplate"
+        }
+      ]
+    }
+  ]
+}
