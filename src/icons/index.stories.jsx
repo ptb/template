@@ -4,7 +4,6 @@ import React from "react"
 import { icon } from "./index.jsx"
 
 export default {
-  "component": icon,
   "title": "Icons"
 }
 
