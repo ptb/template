@@ -1,3 +1,4 @@
+/* eslint-disable-next-line import/no-unresolved */
 import { connect } from "react-redux"
 
 import { actions } from "../../shared/index.js"
