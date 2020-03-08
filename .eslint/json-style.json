@@ -52,6 +52,7 @@
       1,
       "double"
     ],
+    "react/forbid-prop-types": 0,
     "react/jsx-fragments": [
       1,
       "element"
