@@ -1,1 +1,1 @@
-export { HeaderContainer as Header } from "./HeaderContainer.jsx"
+export { Header } from "./header.props.jsx"

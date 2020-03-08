@@ -2,9 +2,9 @@ import { css } from "@amory/style"
 import * as PropTypes from "prop-types"
 import React from "react"
 
-import { styles } from "./Header.css.js"
+import { styles } from "./header.styles.js"
 
-export const HeaderView = ({
+export const Header = ({
   "as": Element = "div",
   children,
   className,
@@ -20,9 +20,9 @@ export const HeaderView = ({
     </Element>
   )
 
-HeaderView.displayName = "Header"
+Header.displayName = "Header"
 
-HeaderView.propTypes = {
+Header.propTypes = {
   "as": PropTypes.elementType,
   "children": PropTypes.node,
   "className": PropTypes.string,
