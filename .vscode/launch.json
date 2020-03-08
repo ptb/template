@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "name": "Next.js Debug",
+      "port": 9229,
+      "request": "launch",
+      "runtimeArgs": [
+        "--experimental-modules",
+        "--inspect",
+        "server.js"
+      ],
+      "runtimeExecutable": "node",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "> Ready on (https?:\\/\\/[a-z]+:?[0-9]*)"
+      },
+      "type": "node"
+    }
+  ],
+  "version": "0.2.0"
+}
