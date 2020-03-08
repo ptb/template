@@ -68,6 +68,7 @@
         "shorthandLast": false
       }
     ],
+    "react/require-default-props": 0,
     "semi": [
       1,
       "never"
