@@ -29,17 +29,19 @@
       ""
     ],
     "StorybookTemplate": [
-      "/* eslint-disable-next-line import/no-extraneous-dependencies */",
-      "import { storiesOf } from \"@storybook/react\"",
       "import React from \"react\"",
       "",
-      "import { <FFSName | pascalcase> } from \"./<FFSName>.view.jsx\"",
+      "import { <FFSName | pascalcase> as Element } from \"./<FFSName>.view.jsx\"",
       "",
-      "storiesOf (\"components|<FFSName | pascalcase>\", module)",
-      "  .add (\"<FFSName | pascalcase>\", () =>",
-      "    (",
-      "      <<FFSName | pascalcase> />",
-      "    ))",
+      "export default {",
+      "  \"component\": Element,",
+      "  \"title\": \"Components|<FFSName | pascalcase>\"",
+      "}",
+      "",
+      "export const <FFSName | pascalcase> = () =>",
+      "  (",
+      "    <Element />",
+      "  )",
       ""
     ],
     "StylesTemplate": [
