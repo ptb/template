@@ -3,20 +3,17 @@ import { get } from "lodash"
 import App from "next/app"
 import React from "react"
 
-(async () => {
-  if (
-    typeof window !== "undefined" && process.env.NODE_ENV === "development"
-  ) {
-    const {
-      "default": whyDidYouRender
-    } = await import ("@welldone-software/why-did-you-render")
+if (
+  typeof window !== "undefined" && process.env.NODE_ENV === "development"
+) {
+// eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  const whyDidYouRender = require ("@welldone-software/why-did-you-render")
 
-    whyDidYouRender (React, {
-      "trackAllPureComponents": true,
-      "trackHooks": false
-    })
-  }
-}) ()
+  whyDidYouRender (React, {
+    "trackAllPureComponents": true,
+    "trackHooks": false
+  })
+}
 
 export default class extends App {
   static async getInitialProps ({ Component, ctx, router }) {
