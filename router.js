@@ -41,5 +41,3 @@ export const router = new KoaRouter ()
       )
     )
   })
-
-export default router
