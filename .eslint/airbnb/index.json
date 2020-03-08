@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "./best-practices.json",
+    "./errors.json",
+    "./node.json",
+    "./style.json",
+    "./variables.json",
+    "./es6.json",
+    "./imports.json",
+    "./strict.json",
+    "./react.json",
+    "./react-a11y.json",
+    "./react-hooks.json"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {}
+}

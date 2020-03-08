@@ -1,0 +1,83 @@
+{
+  "author": {
+    "email": "peter@ptb.dev",
+    "name": "Peter T Bosse II",
+    "url": "https://ptb.dev/"
+  },
+  "dependencies": {
+    "gatsby": "2.19.32",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
+  },
+  "devDependencies": {
+    "@hot-loader/react-dom": "16.12.0",
+    "@types/react": "16.9.23",
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "husky": "4.2.3",
+    "lint-staged": "10.0.8",
+    "npm-run-all": "4.1.5",
+    "typescript": "3.8.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./.eslint/airbnb/index.json",
+      "./.eslint/json-style.json"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js{,x}": [
+      "eslint --fix"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "parser": "babel",
+    "printWidth": 78,
+    "proseWrap": "always",
+    "requirePragma": false,
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "private": true,
+  "renovate": {
+    "automerge": true,
+    "extends": [
+      "config:base"
+    ]
+  },
+  "scripts": {
+    "build": "npm-run-all --parallel build:*",
+    "build:gatsby": "gatsby build",
+    "clean": "npm-run-all --serial clean:gatsby clean:node",
+    "clean:gatsby": "gatsby clean",
+    "clean:node": "rm -rf node_modules yarn.lock",
+    "design": "start-storybook -c ./.storybook -p 9000 -s ./public",
+    "lint": "eslint --ext js,jsx --fix '*.js{,x}' 'src/**/*.js{,x}'",
+    "serve": "npm-run-all --parallel serve:*",
+    "serve:gatsby": "gatsby serve",
+    "start": "npm-run-all --parallel start:*",
+    "start:gatsby": "gatsby develop"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
