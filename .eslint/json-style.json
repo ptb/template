@@ -56,6 +56,7 @@
       1,
       "element"
     ],
+    "react/jsx-props-no-spreading": 0,
     "react/jsx-sort-props": [
       1,
       {

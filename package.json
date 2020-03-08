@@ -4,15 +4,45 @@
     "name": "Peter T Bosse II",
     "url": "https://ptb.dev/"
   },
+  "browserslist": [
+    "> 1% in US",
+    "Last 2 versions",
+    "Android >= 71",
+    "Chrome >= 49",
+    "Edge >= 16",
+    "Firefox >= 52",
+    "IE >= 11",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Samsung >= 7.4"
+  ],
   "dependencies": {
+    "@amory/style": "2020.2.1-0",
+    "@babel/plugin-proposal-export-namespace-from": "7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@koa/router": "8.0.8",
+    "@next/bundle-analyzer": "9.2.2",
+    "babel-plugin-lodash": "3.3.4",
     "gatsby": "2.19.32",
+    "koa": "2.11.0",
+    "next": "9.2.2",
+    "next-build-id": "3.0.0",
+    "next-compose-plugins": "2.2.0",
+    "next-routes": "1.4.2",
+    "prop-types": "15.7.2",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   },
   "devDependencies": {
+    "@babel/core": "7.8.7",
     "@hot-loader/react-dom": "16.12.0",
+    "@storybook/addon-actions": "5.3.14",
+    "@storybook/addon-links": "5.3.14",
+    "@storybook/addons": "5.3.14",
+    "@storybook/react": "5.3.14",
     "@types/react": "16.9.23",
     "babel-eslint": "10.1.0",
+    "babel-loader": "8.0.6",
     "eslint": "6.8.0",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-import": "2.20.1",
@@ -22,7 +52,12 @@
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
     "npm-run-all": "4.1.5",
-    "typescript": "3.8.3"
+    "regenerator-runtime": "0.13.3",
+    "typescript": "3.8.3",
+    "webpack": "4.42.0"
+  },
+  "engines": {
+    "node": "12.10.0"
   },
   "eslintConfig": {
     "extends": [
@@ -68,15 +103,18 @@
   "scripts": {
     "build": "npm-run-all --parallel build:*",
     "build:gatsby": "gatsby build",
+    "build:next": "ANALYZE=true next build",
     "clean": "npm-run-all --serial clean:gatsby clean:node",
     "clean:gatsby": "gatsby clean",
     "clean:node": "rm -rf node_modules yarn.lock",
-    "design": "start-storybook -c ./.storybook -p 9000 -s ./public",
     "lint": "eslint --ext js,jsx --fix '*.js{,x}' 'src/**/*.js{,x}'",
     "serve": "npm-run-all --parallel serve:*",
     "serve:gatsby": "gatsby serve",
+    "serve:next": "NODE_ENV=production node --experimental-modules server.js",
     "start": "npm-run-all --parallel start:*",
-    "start:gatsby": "gatsby develop"
+    "start:gatsby": "gatsby develop",
+    "start:next": "node --experimental-modules server.js",
+    "start:storybook": "start-storybook -c ./.storybook -p 9000 -s ./public"
   },
   "type": "module",
   "version": "1.0.0"
