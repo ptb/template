@@ -11,8 +11,7 @@ export const router = new KoaRouter ()
       resolve (
         dirname (fileURLToPath (import.meta.url)),
         "src",
-        "images",
-        "icons",
+        "static",
         "apple-touch-icon-precomposed.png"
       )
     )
@@ -23,8 +22,7 @@ export const router = new KoaRouter ()
       resolve (
         dirname (fileURLToPath (import.meta.url)),
         "src",
-        "images",
-        "icons",
+        "static",
         "favicon.ico"
       )
     )
@@ -35,8 +33,7 @@ export const router = new KoaRouter ()
       resolve (
         dirname (fileURLToPath (import.meta.url)),
         "src",
-        "images",
-        "icons",
+        "static",
         "favicon.svg"
       )
     )

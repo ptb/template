@@ -1,7 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 
-import { colors } from "../../styles/index.js"
+import { colors } from "../styles/index.js"
 
 export const CircleIcon = ({
   color = colors.black,
