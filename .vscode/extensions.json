@@ -2,6 +2,9 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "Huuums.vscode-fast-folder-structure",
-    "prisma.vscode-graphql"
+    "kumar-harsh.graphql-for-vscode",
+    "ms-azuretools.vscode-docker",
+    "msjsdiag.debugger-for-chrome",
+    "Prisma.vscode-graphql"
   ]
 }
