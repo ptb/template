@@ -17,7 +17,7 @@
     "Samsung >= 7.4"
   ],
   "dependencies": {
-    "@amory/style": "2020.2.1-0",
+    "@amory/style": "2020.7.2",
     "@babel/plugin-proposal-export-namespace-from": "7.8.3",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@koa/router": "8.0.8",
