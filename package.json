@@ -23,7 +23,7 @@
     "@koa/router": "8.0.8",
     "@next/bundle-analyzer": "9.3.4",
     "babel-plugin-lodash": "3.3.4",
-    "gatsby": "2.20.10",
+    "gatsby": "2.32.13",
     "koa": "2.11.0",
     "lodash": "4.17.15",
     "next": "9.3.4",
