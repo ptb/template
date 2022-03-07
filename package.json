@@ -60,7 +60,7 @@
     "webpack": "4.42.1"
   },
   "engines": {
-    "node": "12.10.0"
+    "node": "12.22.10"
   },
   "eslintConfig": {
     "extends": [

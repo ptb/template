@@ -1,4 +1,4 @@
-FROM node:12.10-alpine as build
+FROM node:12.22-alpine as build
 
 RUN apk update && \
   apk --no-cache --update add git
@@ -16,7 +16,7 @@ COPY . /web
 
 RUN yarn build
 
-FROM node:12.10-alpine
+FROM node:12.22-alpine
 
 ENV NODE_ENV="production"
 
