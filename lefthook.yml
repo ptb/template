@@ -12,4 +12,8 @@ pre-commit:
       glob: '*.{js,ts,tsx}'
       root: pkg/
       run: pnpm tsc --noEmit --project tsconfig.json --skipLibCheck
+    tsc-web:
+      glob: '*.{ts,tsx}'
+      root: web/
+      run: pnpm tsc --noEmit --project tsconfig.json --skipLibCheck
   parallel: true

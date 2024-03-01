@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "dependencies": {
+    "next": "14.1.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.73",
+    "@types/react-dom": "18.2.22",
+    "typescript": "5.4.3"
+  },
+  "name": "@ptb/web",
+  "private": true,
+  "scripts": {
+    "build:web": "next build",
+    "serve:web": "next start",
+    "start:web": "next dev"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

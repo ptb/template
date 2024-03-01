@@ -12,7 +12,8 @@
   "private": true,
   "scripts": {
     "start:lib": "pnpm --dir lib start:lib",
-    "start:sql": "pnpm --dir sql start:sql"
+    "start:sql": "pnpm --dir sql start:sql",
+    "start:web": "pnpm --dir web start:web"
   },
   "type": "module"
 }
