@@ -11,6 +11,8 @@
   },
   "private": true,
   "scripts": {
+    "start:android": "pnpm --dir app start:android",
+    "start:ios": "pnpm --dir app start:ios",
     "start:lib": "pnpm --dir lib start:lib",
     "start:sql": "pnpm --dir sql start:sql",
     "start:web": "pnpm --dir web start:web"

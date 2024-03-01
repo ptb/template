@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "android": {
+      "package": "com.example.app"
+    },
+    "experiments": {
+      "typedRoutes": true
+    },
+    "icon": "./src/assets/icon.png",
+    "ios": {
+      "bundleIdentifier": "com.example.app"
+    },
+    "name": "app",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": [
+      "expo-router"
+    ],
+    "scheme": "myapp",
+    "slug": "app",
+    "version": "0.0.0"
+  }
+}
