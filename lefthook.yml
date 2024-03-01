@@ -1,1 +1,8 @@
 ---
+pre-commit:
+  commands:
+    tsc-pkg:
+      glob: '*.{js,ts,tsx}'
+      root: pkg/
+      run: pnpm tsc --noEmit --project tsconfig.json --skipLibCheck
+  parallel: true

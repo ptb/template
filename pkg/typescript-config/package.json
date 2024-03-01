@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "dependencies": {
+    "typescript": "5.4.3"
+  },
+  "main": "tsconfig.json",
+  "name": "@ptb/typescript-config",
+  "type": "module",
+  "version": "2024.3.1"
+}
