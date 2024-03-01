@@ -1,6 +1,9 @@
 ---
 pre-commit:
   commands:
+    eslint:
+      glob: '*.{cjs,js,jsx,mjs,ts,tsx}'
+      run: pnpm eslint --max-warnings 0 {staged_files}
     tsc-pkg:
       glob: '*.{js,ts,tsx}'
       root: pkg/
