@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "dependencies": {
+    "@playwright/test": "1.42.1"
+  },
+  "main": "playwright.config.js",
+  "name": "@ptb/playwright-config",
+  "type": "module",
+  "types": "types.d.ts",
+  "version": "2024.3.1"
+}
