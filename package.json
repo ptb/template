@@ -10,5 +10,8 @@
     "node": "20"
   },
   "private": true,
+  "scripts": {
+    "start:lib": "pnpm --dir lib start:lib"
+  },
   "type": "module"
 }

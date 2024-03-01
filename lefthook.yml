@@ -4,6 +4,10 @@ pre-commit:
     eslint:
       glob: '*.{cjs,js,jsx,mjs,ts,tsx}'
       run: pnpm eslint --max-warnings 0 {staged_files}
+    tsc-lib:
+      glob: '*.{ts,tsx}'
+      root: lib/
+      run: pnpm tsc --noEmit --project tsconfig.json --skipLibCheck
     tsc-pkg:
       glob: '*.{js,ts,tsx}'
       root: pkg/
