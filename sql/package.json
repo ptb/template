@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "dependencies": {
+    "supabase": "1.151.1"
+  },
+  "name": "@ptb/sql",
+  "scripts": {
+    "start:sql": "supabase start",
+    "stop:sql": "supabase db diff -f migration && supabase db dump --local --data-only > supabase/seed.sql && supabase stop"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
