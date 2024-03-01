@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/package.json",
   "devDependencies": {
     "@ptb/eslint-config": "workspace:*",
+    "@ptb/prettier-config": "workspace:*",
     "@ptb/typescript-config": "workspace:*",
     "lefthook": "1.6.7"
   },
