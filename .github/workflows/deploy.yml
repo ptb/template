@@ -1,0 +1,53 @@
+---
+jobs:
+  deploy:
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_DIRECTORY: ${{ vars.CLOUDFLARE_DIRECTORY }}
+      CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+    environment:
+      name: ${{ github.ref_name }}
+    name: Deploy to Cloudflare Pages
+    permissions:
+      contents: read
+      deployments: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ^9
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: package.json
+      - run: pnpm add -g wrangler && SKIP_POSTINSTALL=1 pnpm i && pnpm build:web
+        env:
+          SKIP_POSTINSTALL: 1
+      - id: publish
+        if: ${{ env.CLOUDFLARE_PROJECT_NAME != '' }}
+        uses: ptb/cf-pages-action@v1.6.0
+        with:
+          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
+          directory: ${{ env.CLOUDFLARE_DIRECTORY }}
+          environmentName: ${{ github.ref_name }}
+          projectName: ${{ env.CLOUDFLARE_PROJECT_NAME }}
+      - if: ${{ env.CLOUDFLARE_PROJECT_NAME != '' }}
+        uses: mydea/action-wait-for-api@v2
+        with:
+          interval: 5
+          timeout: 40
+          url: ${{ steps.publish.outputs.url }}
+      - if: ${{ env.LHCI_GITHUB_APP_TOKEN != '' }}
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          temporaryPublicStorage: true
+          urls: |
+            ${{ steps.publish.outputs.url }}
+name: Deploy
+'on':
+  push:
+    branches: [develop, testing, preview, release]

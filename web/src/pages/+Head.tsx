@@ -10,6 +10,10 @@ export const Head = () => (
       rel="icon"
       type="image/svg+xml"
     />
+    <link
+      href="/styles.css"
+      rel="stylesheet"
+    />
     <meta
       content="initial-scale=1,width=device-width"
       name="viewport"

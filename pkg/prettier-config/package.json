@@ -1,18 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "dependencies": {
-    "@typescript-eslint/parser": "7.13.1",
+    "@typescript-eslint/parser": "7.18.0",
     "eslint": "8.57.0",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "prettier-eslint": "16.3.0",
-    "typescript": "5.5.2"
+    "typescript": "5.5.4"
   },
   "devDependencies": {
-    "@ptb/typescript-config": "2024.6.24"
+    "@ptb/typescript-config": "2024.8.1"
   },
   "main": "./prettier.config.js",
   "name": "@ptb/prettier-config",
   "type": "module",
   "types": "./types.d.ts",
-  "version": "2024.6.24"
+  "version": "2024.8.1"
 }

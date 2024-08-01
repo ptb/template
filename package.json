@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "devDependencies": {
-    "@ptb/eslint-config": "2024.6.24",
-    "@ptb/prettier-config": "2024.6.24",
-    "@ptb/typescript-config": "2024.6.24",
-    "lefthook": "1.6.18",
-    "typescript": "5.5.2"
+    "@ptb/eslint-config": "2024.8.1",
+    "@ptb/prettier-config": "2024.8.1",
+    "@ptb/typescript-config": "2024.8.1",
+    "lefthook": "1.7.11",
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": "^20.9 || ^22",
@@ -13,6 +13,7 @@
   },
   "private": true,
   "scripts": {
+    "build:web": "pnpm --dir web build",
     "check:lint": "eslint --max-warnings 0 --no-warn-ignored --report-unused-disable-directives",
     "check:tidy": "prettier --check",
     "check:type": "pnpm --parallel --reporter-hide-prefix --stream -r '/check:type/'",

@@ -22,7 +22,6 @@ const config: StorybookConfig = {
     disableTelemetry: true
   },
   framework: {
-    /* @ts-expect-error: FrameworkName is string */
     name: getAbsolutePath("@storybook/react-vite"),
     options: {}
   },

@@ -5,7 +5,7 @@ import { join } from "node:path"
 /** @ts-expect-error: untyped */
 import { default as nextPlugin } from "@next/eslint-plugin-next"
 import { default as stylisticPlugin } from "@stylistic/eslint-plugin"
-import * as tanstackQueryPlugin from "@tanstack/eslint-plugin-query"
+import { default as tanstackQueryPlugin } from "@tanstack/eslint-plugin-query"
 import { default as typescriptPlugin } from "@typescript-eslint/eslint-plugin"
 import { default as typescriptParser } from "@typescript-eslint/parser"
 /** @ts-expect-error: untyped */
@@ -35,7 +35,6 @@ import { default as sortKeysPlugin } from "eslint-plugin-sort-keys"
 import { default as storybookPlugin } from "eslint-plugin-storybook"
 /** @ts-expect-error: untyped */
 import { default as typescriptSortKeysPlugin } from "eslint-plugin-typescript-sort-keys"
-/** @ts-expect-error: untyped */
 import { default as unicornPlugin } from "eslint-plugin-unicorn"
 import { default as globals } from "globals"
 
@@ -983,9 +982,8 @@ export const config = [
     files: ["**/*.{cjs,js,jsx,ts,tsx}"],
     ignores,
     plugins: {
-      /* prettier-ignore */
-      "@stylistic":
-      /** @type {import("eslint").ESLint.Plugin} */ (stylisticPlugin)
+      /** @ts-expect-error: Types of property 'configs' are incompatible. */
+      "@stylistic": stylisticPlugin
     },
     rules: {
       "@stylistic/array-bracket-newline": ["warn", "consistent"],
