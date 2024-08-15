@@ -8,6 +8,16 @@ import { default as macroPlugin } from "vite-plugin-babel-macros"
 
 const port = process.env["PORT"] ?? 3000
 const type = process.env["TYPE"] ?? ""
+
+const reactOpts = process.env["USE_EMOTION"]
+  ? {
+      babel: {
+        plugins: ["@emotion/babel-plugin"]
+      },
+      jsxImportSource: "@emotion/react"
+    }
+  : {}
+
 const srcDir = join(process.cwd(), "src")
 
 /** @type {import("vite").UserConfigFnObject} */
@@ -24,7 +34,7 @@ export const getConfig = ({ mode }) => ({
     sourcemap: mode === "release" ? "hidden" : true
   },
   plugins: [
-    reactPlugin(),
+    reactPlugin(reactOpts),
     macroPlugin(),
     type !== "test" && vikePlugin({ prerender: true })
   ],

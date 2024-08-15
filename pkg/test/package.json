@@ -1,19 +1,19 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "dependencies": {
-    "@playwright/experimental-ct-react": "1.45.3",
-    "@playwright/test": "1.45.3",
-    "monocart-coverage-reports": "2.10.0",
+    "@playwright/experimental-ct-react": "1.46.0",
+    "@playwright/test": "1.46.0",
+    "monocart-coverage-reports": "2.10.3",
     "react": "18.3.1"
   },
   "devDependencies": {
-    "@ptb/typescript-config": "2024.8.1",
-    "@types/node": "20.14.14",
+    "@ptb/typescript-config": "2024.8.15",
+    "@types/node": "20.14.15",
     "@types/react": "18.3.3"
   },
   "main": "./index.js",
   "name": "@ptb/test",
   "type": "module",
   "types": "./types.d.ts",
-  "version": "2024.8.1"
+  "version": "2024.8.15"
 }

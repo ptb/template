@@ -140,6 +140,14 @@ export const config = [
       "no-octal": "error",
       "no-prototype-builtins": "error",
       "no-regex-spaces": "error",
+      "no-restricted-syntax": [
+        "error",
+        {
+          message:
+            "Avoid enums: https://nodejs.org/api/typescript.html#unsupported-typescript-features",
+          selector: "TSEnumDeclaration"
+        }
+      ],
       "no-self-assign": "error",
       "no-shadow-restricted-names": "error",
       "no-sparse-arrays": "error",
@@ -170,7 +178,6 @@ export const config = [
       "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/ban-ts-comment": "error",
       "@typescript-eslint/ban-tslint-comment": "error",
-      "@typescript-eslint/ban-types": "error",
       "@typescript-eslint/class-literal-property-style": "error",
       "@typescript-eslint/consistent-generic-constructors": "error",
       "@typescript-eslint/consistent-indexed-object-style": "error",
@@ -186,6 +193,7 @@ export const config = [
       "@typescript-eslint/no-dynamic-delete": "error",
       "@typescript-eslint/no-empty-function": "error",
       "@typescript-eslint/no-empty-interface": "error",
+      "@typescript-eslint/no-empty-object-type": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-extra-non-null-assertion": "error",
       "@typescript-eslint/no-extraneous-class": "error",
@@ -194,7 +202,6 @@ export const config = [
       "@typescript-eslint/no-implied-eval": "error",
       "@typescript-eslint/no-inferrable-types": "error",
       "@typescript-eslint/no-invalid-void-type": "error",
-      "@typescript-eslint/no-loss-of-precision": "error",
       "@typescript-eslint/no-meaningless-void-operator": "error",
       "@typescript-eslint/no-misused-new": "error",
       "@typescript-eslint/no-misused-promises": [
@@ -224,12 +231,13 @@ export const config = [
       "@typescript-eslint/no-unsafe-call": "error",
       "@typescript-eslint/no-unsafe-declaration-merging": "error",
       "@typescript-eslint/no-unsafe-enum-comparison": "error",
+      "@typescript-eslint/no-unsafe-function-type": "error",
       "@typescript-eslint/no-unsafe-member-access": "error",
       "@typescript-eslint/no-unsafe-return": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-useless-constructor": "error",
-      "@typescript-eslint/no-useless-template-literals": "error",
       "@typescript-eslint/no-var-requires": "error",
+      "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/non-nullable-type-assertion-style": "error",
       "@typescript-eslint/prefer-as-const": "error",
       "@typescript-eslint/prefer-for-of": "error",
@@ -491,6 +499,10 @@ export const config = [
       "jsdoc/implements-on-classes": "warn",
       "jsdoc/imports-as-dependencies": "off",
       "jsdoc/informative-docs": "warn",
+      "jsdoc/lines-before-block": [
+        "off",
+        { excludedTags: ["ts-expect-error"] }
+      ],
       "jsdoc/match-description": "warn",
       "jsdoc/match-name": "off",
       "jsdoc/multiline-blocks": "warn",
