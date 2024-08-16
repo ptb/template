@@ -2,16 +2,16 @@
   "$schema": "https://json.schemastore.org/package.json",
   "dependencies": {
     "@playwright/experimental-ct-react": "1.46.0",
-    "@ptb/test": "2024.8.15",
-    "@ptb/vite-config": "2024.8.15"
+    "@ptb/test": "2024.8.16",
+    "@ptb/vite-config": "2024.8.16"
   },
   "devDependencies": {
-    "@ptb/typescript-config": "2024.8.15",
+    "@ptb/typescript-config": "2024.8.16",
     "@types/node": "20.14.15"
   },
   "main": "./playwright.config.js",
   "name": "@ptb/playwright-config",
   "type": "module",
   "types": "./types.d.ts",
-  "version": "2024.8.15"
+  "version": "2024.8.16"
 }

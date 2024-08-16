@@ -6,5 +6,5 @@
   "main": "./tsconfig.json",
   "name": "@ptb/typescript-config",
   "type": "module",
-  "version": "2024.8.15"
+  "version": "2024.8.16"
 }

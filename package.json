@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "devDependencies": {
-    "@ptb/eslint-config": "2024.8.15",
-    "@ptb/prettier-config": "2024.8.15",
-    "@ptb/typescript-config": "2024.8.15",
-    "lefthook": "1.7.12",
+    "@ptb/eslint-config": "2024.8.16",
+    "@ptb/prettier-config": "2024.8.16",
+    "@ptb/typescript-config": "2024.8.16",
+    "lefthook": "1.7.13",
     "typescript": "5.5.4"
   },
   "engines": {
@@ -14,7 +14,8 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "@typescript-eslint/parser": "8"
+        "@typescript-eslint/parser": "8",
+        "eslint": "9"
       }
     }
   },

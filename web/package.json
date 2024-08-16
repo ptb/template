@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@ptb/style": "1.0.0",
-    "@ptb/vite-config": "2024.8.15",
+    "@ptb/vite-config": "2024.8.16",
     "@vitejs/plugin-react": "4.3.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -18,9 +18,9 @@
   "devDependencies": {
     "@chromatic-com/storybook": "1.6.1",
     "@playwright/experimental-ct-react": "1.46.0",
-    "@ptb/playwright-config": "2024.8.15",
-    "@ptb/test": "2024.8.15",
-    "@ptb/typescript-config": "2024.8.15",
+    "@ptb/playwright-config": "2024.8.16",
+    "@ptb/test": "2024.8.16",
+    "@ptb/typescript-config": "2024.8.16",
     "@storybook/addon-essentials": "8.2.9",
     "@storybook/addon-interactions": "8.2.9",
     "@storybook/addon-links": "8.2.9",

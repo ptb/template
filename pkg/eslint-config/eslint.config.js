@@ -10,13 +10,11 @@ import { default as typescriptPlugin } from "@typescript-eslint/eslint-plugin"
 import { default as typescriptParser } from "@typescript-eslint/parser"
 /** @ts-expect-error: untyped */
 import { default as fpPlugin } from "eslint-plugin-fp"
-/** @ts-expect-error: untyped */
-import { default as importPlugin } from "eslint-plugin-import"
+import { default as importXPlugin } from "eslint-plugin-import-x"
 import { default as jsdocPlugin } from "eslint-plugin-jsdoc"
 /** @ts-expect-error: untyped */
 import { default as jsxA11yPlugin } from "eslint-plugin-jsx-a11y"
-/** @ts-expect-error: untyped */
-import { default as nodePlugin } from "eslint-plugin-node"
+import { default as nPlugin } from "eslint-plugin-n"
 /** @ts-expect-error: untyped */
 import { default as promisePlugin } from "eslint-plugin-promise"
 /** @ts-expect-error: untyped */
@@ -58,10 +56,7 @@ export const config = [
     languageOptions: {
       ecmaVersion: "latest",
       globals: { ...globals.browser, ...globals.node },
-      /* prettier-ignore */
-      parser:
-        /** @type {import("eslint").Linter.ParserModule} */
-        (typescriptParser),
+      parser: typescriptParser,
       parserOptions: {
         linterOptions: {
           reportUnusedDisableDirectives: "warn"
@@ -315,42 +310,43 @@ export const config = [
     files: ["**/*.{cjs,js,jsx,ts,tsx}"],
     ignores,
     plugins: {
-      import: importPlugin
+      /* prettier-ignore */
+      "import-x": /** @type {?} */ (importXPlugin)
     },
     rules: {
-      "import/consistent-type-specifier-style": [
+      "import-x/consistent-type-specifier-style": [
         "warn",
         "prefer-top-level"
       ],
-      "import/default": "error",
-      "import/dynamic-import-chunkname": "off",
-      "import/export": "error",
-      "import/exports-last": "warn",
-      "import/extensions": [
+      "import-x/default": "error",
+      "import-x/dynamic-import-chunkname": "off",
+      "import-x/export": "error",
+      "import-x/exports-last": "warn",
+      "import-x/extensions": [
         "off",
         "never",
         { css: "always", json: "always" }
       ],
-      "import/first": "warn",
-      "import/group-exports": "off",
-      "import/max-dependencies": [
+      "import-x/first": "warn",
+      "import-x/group-exports": "off",
+      "import-x/max-dependencies": [
         "warn",
         { ignoreTypeImports: true, max: 25 }
       ],
-      "import/named": "error",
-      "import/namespace": "off",
-      "import/newline-after-import": "off",
-      "import/no-absolute-path": "error",
-      "import/no-amd": "off",
-      "import/no-anonymous-default-export": "off",
-      "import/no-commonjs": "off",
-      "import/no-cycle": "warn",
-      "import/no-default-export": "warn",
-      "import/no-deprecated": "off",
-      "import/no-duplicates": "error",
-      "import/no-dynamic-require": "off",
-      "import/no-empty-named-blocks": "error",
-      "import/no-extraneous-dependencies": [
+      "import-x/named": "error",
+      "import-x/namespace": "off",
+      "import-x/newline-after-import": "off",
+      "import-x/no-absolute-path": "error",
+      "import-x/no-amd": "off",
+      "import-x/no-anonymous-default-export": "off",
+      "import-x/no-commonjs": "off",
+      "import-x/no-cycle": "warn",
+      "import-x/no-default-export": "warn",
+      "import-x/no-deprecated": "off",
+      "import-x/no-duplicates": "error",
+      "import-x/no-dynamic-require": "off",
+      "import-x/no-empty-named-blocks": "error",
+      "import-x/no-extraneous-dependencies": [
         "error",
         {
           bundledDependencies: false,
@@ -380,25 +376,25 @@ export const config = [
           peerDependencies: false
         }
       ],
-      "import/no-import-module-exports": "error",
-      "import/no-internal-modules": "off",
-      "import/no-mutable-exports": "off",
-      "import/no-named-as-default": "error",
-      "import/no-named-as-default-member": "warn",
-      "import/no-named-default": "off",
-      "import/no-named-export": "off",
-      "import/no-namespace": "off",
-      "import/no-nodejs-modules": "off",
-      "import/no-relative-packages": "off",
-      "import/no-relative-parent-imports": "off",
-      "import/no-restricted-paths": "off",
-      "import/no-self-import": "error",
-      "import/no-unassigned-import": "off",
-      "import/no-unresolved": "off",
-      "import/no-unused-modules": ["off", { missingExports: true }],
-      "import/no-useless-path-segments": "warn",
-      "import/no-webpack-loader-syntax": "error",
-      "import/order": [
+      "import-x/no-import-module-exports": "error",
+      "import-x/no-internal-modules": "off",
+      "import-x/no-mutable-exports": "off",
+      "import-x/no-named-as-default": "error",
+      "import-x/no-named-as-default-member": "warn",
+      "import-x/no-named-default": "off",
+      "import-x/no-named-export": "off",
+      "import-x/no-namespace": "off",
+      "import-x/no-nodejs-modules": "off",
+      "import-x/no-relative-packages": "off",
+      "import-x/no-relative-parent-imports": "off",
+      "import-x/no-restricted-paths": "off",
+      "import-x/no-self-import": "error",
+      "import-x/no-unassigned-import": "off",
+      "import-x/no-unresolved": "off",
+      "import-x/no-unused-modules": ["off", { missingExports: true }],
+      "import-x/no-useless-path-segments": "warn",
+      "import-x/no-webpack-loader-syntax": "error",
+      "import-x/order": [
         "error",
         {
           "alphabetize": { caseInsensitive: true, order: "asc" },
@@ -423,8 +419,8 @@ export const config = [
           "pathGroupsExcludedImportTypes": ["react"]
         }
       ],
-      "import/prefer-default-export": "off",
-      "import/unambiguous": "off"
+      "import-x/prefer-default-export": "off",
+      "import-x/unambiguous": "off"
     }
   },
   {
@@ -440,21 +436,21 @@ export const config = [
     ],
     ignores,
     rules: {
-      "import/no-default-export": "off"
+      "import-x/no-default-export": "off"
     }
   },
   {
     files: ["app/src/**/*.{ts,tsx}"],
     ignores,
     rules: {
-      "import/no-nodejs-modules": "error"
+      "import-x/no-nodejs-modules": "error"
     }
   },
   {
     files: ["**/*.cjs"],
     ignores,
     rules: {
-      "import/no-unused-modules": "off"
+      "import-x/no-unused-modules": "off"
     }
   },
   {
@@ -635,46 +631,47 @@ export const config = [
     files: ["**/*.{cjs,js,jsx,ts,tsx}"],
     ignores,
     plugins: {
-      node: nodePlugin
+      n: nPlugin
     },
     rules: {
-      "node/callback-return": "off",
-      "node/exports-style": "off",
-      "node/file-extension-in-import": "off",
-      "node/global-require": "off",
-      "node/handle-callback-err": "off",
-      "node/no-callback-literal": "off",
-      "node/no-deprecated-api": "off",
-      "node/no-exports-assign": "off",
-      "node/no-extraneous-import": "off",
-      "node/no-extraneous-require": "off",
-      "node/no-missing-import": "off",
-      "node/no-missing-require": "off",
-      "node/no-mixed-requires": "off",
-      "node/no-new-require": "off",
-      "node/no-path-concat": "off",
-      "node/no-process-env": "off",
-      "node/no-process-exit": "off",
-      "node/no-restricted-import": "off",
-      "node/no-restricted-require": "off",
-      "node/no-sync": "off",
-      "node/no-unpublished-bin": "off",
-      "node/no-unpublished-import": "off",
-      "node/no-unpublished-require": "off",
-      "node/no-unsupported-features/es-builtins": "off",
-      "node/no-unsupported-features/es-syntax": "off",
-      "node/no-unsupported-features/node-builtins": "off",
-      "node/prefer-global/buffer": "off",
-      "node/prefer-global/console": "off",
-      "node/prefer-global/process": "off",
-      "node/prefer-global/text-decoder": "off",
-      "node/prefer-global/text-encoder": "off",
-      "node/prefer-global/url": "off",
-      "node/prefer-global/url-search-params": "off",
-      "node/prefer-promises/dns": "off",
-      "node/prefer-promises/fs": "off",
-      "node/process-exit-as-throw": "off",
-      "node/shebang": "off"
+      "n/callback-return": "off",
+      "n/exports-style": "off",
+      "n/file-extension-in-import": "off",
+      "n/global-require": "off",
+      "n/handle-callback-err": "off",
+      "n/hashbang": "off",
+      "n/no-callback-literal": "off",
+      "n/no-deprecated-api": "off",
+      "n/no-exports-assign": "off",
+      "n/no-extraneous-import": "off",
+      "n/no-extraneous-require": "off",
+      "n/no-missing-import": "off",
+      "n/no-missing-require": "off",
+      "n/no-mixed-requires": "off",
+      "n/no-new-require": "off",
+      "n/no-path-concat": "off",
+      "n/no-process-env": "off",
+      "n/no-process-exit": "off",
+      "n/no-restricted-import": "off",
+      "n/no-restricted-require": "off",
+      "n/no-sync": "off",
+      "n/no-unpublished-bin": "off",
+      "n/no-unpublished-import": "off",
+      "n/no-unpublished-require": "off",
+      "n/no-unsupported-features/es-builtins": "off",
+      "n/no-unsupported-features/es-syntax": "off",
+      "n/no-unsupported-features/node-builtins": "off",
+      "n/prefer-global/buffer": "off",
+      "n/prefer-global/console": "off",
+      "n/prefer-global/process": "off",
+      "n/prefer-global/text-decoder": "off",
+      "n/prefer-global/text-encoder": "off",
+      "n/prefer-global/url": "off",
+      "n/prefer-global/url-search-params": "off",
+      "n/prefer-node-protocol": "warn",
+      "n/prefer-promises/dns": "off",
+      "n/prefer-promises/fs": "off",
+      "n/process-exit-as-throw": "off"
     }
   },
   {
@@ -857,7 +854,7 @@ export const config = [
       storybook: storybookPlugin
     },
     rules: {
-      "import/no-anonymous-default-export": "off",
+      "import-x/no-anonymous-default-export": "off",
       "react-hooks/rules-of-hooks": "off",
       "storybook/await-interactions": "error",
       "storybook/context-in-play-function": "error",
@@ -994,7 +991,6 @@ export const config = [
     files: ["**/*.{cjs,js,jsx,ts,tsx}"],
     ignores,
     plugins: {
-      /** @ts-expect-error: Types of property 'configs' are incompatible. */
       "@stylistic": stylisticPlugin
     },
     rules: {
