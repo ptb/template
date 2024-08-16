@@ -17,7 +17,7 @@
     "vitest-monocart-coverage": "2.1.1"
   },
   "devDependencies": {
-    "@ptb/eslint-config": "2024.8.16",
+    "@ptb/eslint-config": "2024.8.16-1",
     "@ptb/prettier-config": "2024.8.16",
     "@types/node": "20.14.15",
     "@types/react": "18.3.3",
@@ -28,5 +28,5 @@
   "name": "@ptb/vite-config",
   "type": "module",
   "types": "./types.d.ts",
-  "version": "2024.8.16"
+  "version": "2024.8.16-1"
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "devDependencies": {
-    "@ptb/eslint-config": "2024.8.16",
+    "@ptb/eslint-config": "2024.8.16-1",
     "@ptb/prettier-config": "2024.8.16",
     "@ptb/typescript-config": "2024.8.16",
     "lefthook": "1.7.13",
@@ -14,8 +14,7 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "@typescript-eslint/parser": "8",
-        "eslint": "9"
+        "@typescript-eslint/parser": "8"
       }
     }
   },
