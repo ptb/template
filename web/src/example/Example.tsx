@@ -18,9 +18,24 @@ export const Example = () => {
   return (
     <div style={{ backgroundColor }}>
       <h1>Current color: {backgroundColor}</h1>
-      <button onClick={handleSetBlue}>Set Blue</button>
-      <button onClick={handleSetWhite}>Set White</button>
-      <button onClick={handleSetRed}>Set Red</button>
+      <button
+        onClick={handleSetBlue}
+        type="button"
+      >
+        Set Blue
+      </button>
+      <button
+        onClick={handleSetWhite}
+        type="button"
+      >
+        Set White
+      </button>
+      <button
+        onClick={handleSetRed}
+        type="button"
+      >
+        Set Red
+      </button>
     </div>
   )
 }

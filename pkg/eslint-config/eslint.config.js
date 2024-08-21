@@ -2,6 +2,7 @@ import { execSync } from "node:child_process"
 import { existsSync } from "node:fs"
 import { join } from "node:path"
 
+import { default as reactXPlugin } from "@eslint-react/eslint-plugin"
 /** @ts-expect-error: untyped */
 import { default as nextPlugin } from "@next/eslint-plugin-next"
 import { default as stylisticPlugin } from "@stylistic/eslint-plugin"
@@ -843,6 +844,109 @@ export const config = [
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true, allowExportNames: ["metadata"] }
+      ]
+    }
+  },
+  {
+    files: ["**/*.{jsx,tsx}"],
+    ignores,
+    plugins: {
+      /* prettier-ignore */
+      "react-x": /** @type {?} */ (reactXPlugin)
+    },
+    rules: {
+      "react-x/avoid-shorthand-boolean": "off",
+      "react-x/avoid-shorthand-fragment": "off",
+      "react-x/debug/class-component": "off",
+      "react-x/debug/function-component": "off",
+      "react-x/debug/is-from-react": "off",
+      "react-x/debug/react-hooks": "off",
+      "react-x/dom/no-children-in-void-dom-elements": "error",
+      "react-x/dom/no-dangerously-set-innerhtml": "warn",
+      "react-x/dom/no-dangerously-set-innerhtml-with-children":
+        "error",
+      "react-x/dom/no-find-dom-node": "error",
+      "react-x/dom/no-missing-button-type": "warn",
+      "react-x/dom/no-missing-iframe-sandbox": "warn",
+      "react-x/dom/no-namespace": "error",
+      "react-x/dom/no-render-return-value": "error",
+      "react-x/dom/no-script-url": "error",
+      "react-x/dom/no-unsafe-iframe-sandbox": "error",
+      "react-x/dom/no-unsafe-target-blank": "warn",
+      "react-x/ensure-forward-ref-using-ref": "error",
+      "react-x/hooks-extra/ensure-custom-hooks-using-other-hooks":
+        "warn",
+      "react-x/hooks-extra/ensure-use-callback-has-non-empty-deps":
+        "warn",
+      "react-x/hooks-extra/ensure-use-memo-has-non-empty-deps":
+        "warn",
+      "react-x/hooks-extra/no-direct-set-state-in-use-effect": "warn",
+      "react-x/hooks-extra/no-direct-set-state-in-use-layout-effect":
+        "warn",
+      "react-x/hooks-extra/prefer-use-state-lazy-initialization":
+        "error",
+      "react-x/naming-convention/component-name": "warn",
+      "react-x/naming-convention/filename": ["warn", "PascalCase"],
+      "react-x/naming-convention/filename-extension": [
+        "warn",
+        "as-needed"
+      ],
+      "react-x/naming-convention/use-state": "warn",
+      "react-x/no-access-state-in-setstate": "error",
+      "react-x/no-array-index-key": "warn",
+      "react-x/no-children-count": "off",
+      "react-x/no-children-for-each": "off",
+      "react-x/no-children-map": "off",
+      "react-x/no-children-only": "off",
+      "react-x/no-children-prop": "warn",
+      "react-x/no-children-to-array": "off",
+      "react-x/no-class-component": "off",
+      "react-x/no-clone-element": "off",
+      "react-x/no-comment-textnodes": "warn",
+      "react-x/no-complex-conditional-rendering": "off",
+      "react-x/no-component-will-mount": "error",
+      "react-x/no-component-will-receive-props": "error",
+      "react-x/no-component-will-update": "error",
+      "react-x/no-create-ref": "error",
+      "react-x/no-default-props": "warn",
+      "react-x/no-direct-mutation-state": "error",
+      "react-x/no-duplicate-key": "warn",
+      "react-x/no-implicit-key": "warn",
+      "react-x/no-leaked-conditional-rendering": "warn",
+      "react-x/no-missing-component-display-name": "warn",
+      "react-x/no-missing-key": "warn",
+      "react-x/no-nested-components": "warn",
+      "react-x/no-prop-types": "warn",
+      "react-x/no-redundant-should-component-update": "error",
+      "react-x/no-set-state-in-component-did-mount": "error",
+      "react-x/no-set-state-in-component-did-update": "error",
+      "react-x/no-set-state-in-component-will-update": "error",
+      "react-x/no-string-refs": "error",
+      "react-x/no-unsafe-component-will-mount": "warn",
+      "react-x/no-unsafe-component-will-receive-props": "warn",
+      "react-x/no-unsafe-component-will-update": "warn",
+      "react-x/no-unstable-context-value": "warn",
+      "react-x/no-unstable-default-props": "warn",
+      "react-x/no-unused-class-component-members": "warn",
+      "react-x/no-unused-state": "warn",
+      "react-x/no-useless-fragment": "warn",
+      "react-x/prefer-destructuring-assignment": "warn",
+      "react-x/prefer-read-only-props": "warn",
+      "react-x/prefer-shorthand-boolean": "warn",
+      "react-x/prefer-shorthand-fragment": "warn"
+    }
+  },
+  {
+    files: ["**/*.{cjs,js,jsx,ts,tsx}"],
+    ignores,
+    plugins: {
+      /* prettier-ignore */
+      "react-x": /** @type {?} */ (reactXPlugin)
+    },
+    rules: {
+      "react-x/naming-convention/filename-extension": [
+        "warn",
+        "as-needed"
       ]
     }
   },

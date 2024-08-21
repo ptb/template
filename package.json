@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "devDependencies": {
-    "@ptb/eslint-config": "2024.8.16-1",
-    "@ptb/prettier-config": "2024.8.16",
-    "@ptb/typescript-config": "2024.8.16",
-    "lefthook": "1.7.13",
+    "@ptb/eslint-config": "2024.8.20",
+    "@ptb/prettier-config": "2024.8.20",
+    "@ptb/typescript-config": "2024.8.20",
+    "lefthook": "1.7.14",
     "typescript": "5.5.4"
   },
   "engines": {
